@@ -13,13 +13,13 @@ export default function EphemeralNode(props: { version; node: EphemeralNode; x; 
       <React.Fragment>
         {node.left ? (
           <>
-            <line strokeWidth="1px" stroke="blue" x1={x - nodeGap} y1={y + nodeGap} x2={x} y2={y} />
+            <line strokeWidth="1.5px" stroke="blue" x1={x - nodeGap} y1={y + nodeGap} x2={x} y2={y} />
             <EphemeralNode version={version} node={node.left} x={x - nodeGap} y={y + nodeGap} radius={radius} />
           </>
         ) : null}
         {node.right ? (
           <>
-            <line strokeWidth="1px" stroke="green" x1={x + nodeGap} y1={y + nodeGap} x2={x} y2={y} />
+            <line strokeWidth="1.5px" stroke="green" x1={x + nodeGap} y1={y + nodeGap} x2={x} y2={y} />
             <EphemeralNode version={version} node={node.right} x={x + nodeGap} y={y + nodeGap} radius={radius} />
           </>
         ) : null}
