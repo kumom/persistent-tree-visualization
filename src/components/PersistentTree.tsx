@@ -4,6 +4,7 @@ import tree from "src/algo/fatnode";
 import EmptyNode from "./EmptyNode";
 import { scaleRadius, nodeGapFor } from "src/config";
 import ZoomTool from "./ZoomTool";
+import Button from "./Button";
 
 export default function PersistentTree(props: { radius; setHistory; setVersion; w; h }) {
   const { radius, setHistory, setVersion, w, h } = props;
@@ -67,15 +68,7 @@ function Modifier(props: { value; setHistory; setVersion; setValue }) {
         }}>
         Remove
       </button>
-      <span className="insert-value" style={{ margin: "0 10px" }}>
-        <button className="decrement" onClick={(e) => setValue((v) => v - 1)}>
-          {"<"}
-        </button>
-        <input type="number" name="insert-value" value={value} onChange={(e) => setValue(Number(e.target.value))} />
-        <button className="increment" onClick={(e) => setValue((v) => v + 1)}>
-          {">"}
-        </button>
-      </span>
+      <Button value={value} setValue={setValue} styleClass={"button-wrapper persistent"} />
       <button
         className="menu-button"
         onClick={() => {

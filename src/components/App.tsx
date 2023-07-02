@@ -44,13 +44,7 @@ export default function App() {
             height: "100%",
             width: "100%",
           }}>
-          <PersistentTree
-            radius={radius}
-            setHistory={setHistory}
-            setVersion={setVersion}
-            w={w}
-            h={h}
-          />
+          <PersistentTree radius={radius} setHistory={setHistory} setVersion={setVersion} w={w} h={h} />
           <div style={{ width: "100%", height: "1px", borderBottom: "1px solid #ccc" }} />
           <EphemeralTree latestVersion={version} radius={radius} w={w} h={h} />
         </div>

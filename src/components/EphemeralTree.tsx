@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import EphemeralNode from "./EphemeralNode";
 import tree from "src/algo/fatnode";
 import ZoomTool from "./ZoomTool";
+import Button from "./Button";
 
 export default function EphemeralTree(props: { latestVersion; radius; w; h }) {
   const { latestVersion, radius, w, h } = props;
@@ -28,25 +29,17 @@ function Menu(props: { version; setVersion; latestVersion; setScale }) {
 
   if (latestVersion == -1) {
     return null;
-  } else return (
-    <div className="menu">
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <span>Tree at version {`${version}`}:</span>
-        {latestVersion <= 0 ? null : (
-          <input
-            className="slider"
-            type="range"
-            min={0}
-            max={latestVersion}
-            step={1}
-            onChange={(e) => setVersion(Number(e.target.value))}
-            value={version}
-            id="version-range"
-            style={{ width: `${(latestVersion + 1) * 30}px`, marginLeft: "0.4em" }}
-          />
-        )}
+  } else {
+    return (
+      <div className="menu">
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <span>Tree at version</span>
+          {latestVersion <= -1 ? null : (
+            <Button value={version} setValue={setVersion} styleClass={"button-wrapper ephemeral"} />
+          )}
+        </div>
+        <ZoomTool setScale={setScale} />
       </div>
-      <ZoomTool setScale={setScale} />
-    </div>
-  );
+    );
+  }
 }
