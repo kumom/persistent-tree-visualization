@@ -58,7 +58,7 @@ function renderFatNode(version, node, index, depth, currentDepth, nodeGap, radiu
         id={`${x}-${y}-${xx}-${yy}`}
         d={`M ${x} ${y} l ${1} ${1} A ${nodeGap * (depth - currentDepth)} ${nodeGap * 3} 0 0 0 ${xx} ${yy}`}
         strokeWidth="1.5px"
-        stroke="green"
+        stroke={right? "green" : "blue"}
         fill="none"
       />
     );
@@ -69,7 +69,7 @@ function renderFatNode(version, node, index, depth, currentDepth, nodeGap, radiu
         id={`${x}-${y}-${xx}-${yy}`}
         d={right ? `M ${x} ${y} L ${xx} ${yy}` : `M ${xx} ${yy} L ${x} ${y}`}
         strokeWidth="1.5px"
-        stroke="green"
+        stroke={right? "green" : "blue"}
       />
     );
   }
