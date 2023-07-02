@@ -1,0 +1,164 @@
+#app, #root {
+  height: 100vh;
+  width: 100vw;
+}
+
+* {
+  font-size: 19px;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+h1 {
+  font-weight: 500;
+}
+
+#history * {
+  font-size: 17px;
+}
+
+ul {
+  padding-inline-start: 1.5em;
+}
+
+.view {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  line-height: normal;
+  margin: 0;
+  min-width: 0;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+.insert-value {
+  border: 1.3px solid #ffffff;
+  background-color: rgb(46, 46, 46);
+  display: flex;
+  border-radius: 20px;
+}
+
+.insert-value button {
+  border: none;
+  margin: 0 10px;
+  font-size: 14px;
+  color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  border: none;
+  text-align: center;
+  padding: 5px;
+  width: 1.5em;
+  height: 1.5em;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: rgb(46, 46, 46);
+  color: white;
+}
+
+input[type=number]:focus {
+  outline: none;
+}
+
+.menu-button {
+  border: 1.5px solid #3c3c3c;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  font-size: 15px;
+  padding: 13px;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.menu-button:hover {
+  color: #fff;
+  background-color: #444444;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.menu-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.zoom-in {
+  background: url('/persistent-bst/assets/zoom-in.svg') no-repeat;
+}
+
+.zoom-out {
+  background: url('/persistent-bst/assets/zoom-out.svg') no-repeat;
+}
+
+.zoom {
+  border: none;
+  background-size: 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.zoom-tool {
+  display: flex;
+  align-self: flex-end;
+}
+
+.slider {
+  -webkit-appearance: none;
+  height: 20px;
+  background: #dadada;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 20px;
+  background: #202020;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 20px;
+  background: #202020;
+  cursor: pointer;
+}
+

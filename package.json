@@ -1,0 +1,46 @@
+{
+  "name": "persistent-tree",
+  "version": "0.0.1",
+  "description": "Visualization of a persistent tree",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint './src/**' --ext .js,.jsx,.ts,.tsx --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-assets": "aws s3 sync assets/ s3://kumom.io/persistent-bst/assets --exclude '*.DS_Store'",
+    "deploy-src": "aws s3 sync dist/ s3://kumom.io/persistent-bst/ --exclude '*.DS_Store'",
+    "deploy": "npm run deploy-assets; npm run deploy-src",
+    "refresh": "aws cloudfront create-invalidation --distribution-id E26120WQD6YYFN --paths '/*'"
+  },
+  "author": "Shengyu Huang",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.18.6",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "html-webpack-plugin": "^5.5.1",
+    "prettier": "^2.8.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.4.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
+    "webpack": "^5.79.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.3"
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^4.2.1"
+  }
+}
